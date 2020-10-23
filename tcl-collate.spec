@@ -31,9 +31,15 @@ make linux
 mkdir -p %buildroot%tcl_archdir/%{packagename}%{version}
 cp pkgIndex.tcl %buildroot%tcl_archdir/%{packagename}%{version}
 cp collsort.tcl %buildroot%tcl_archdir/%{packagename}%{version}
+%if %{__isa_bits} == 64
 mkdir -p %buildroot%tcl_archdir/%{packagename}%{version}/linux64
 cp locale.so %buildroot%tcl_archdir/%{packagename}%{version}/linux64
 cp collate.so %buildroot%tcl_archdir/%{packagename}%{version}/linux64
+%else
+mkdir -p %buildroot%tcl_archdir/%{packagename}%{version}/linux32
+cp locale.so %buildroot%tcl_archdir/%{packagename}%{version}/linux32
+cp collate.so %buildroot%tcl_archdir/%{packagename}%{version}/linux32
+%endif
 
 %clean
 rm -rf %buildroot
