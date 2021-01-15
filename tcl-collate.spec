@@ -11,7 +11,7 @@ BuildRequires:  tcl-devel >= 8.6
 Version:        1.0
 Release:        0
 Summary:        A Tcl interface to strcoll()
-License:        zlib/libpng
+License:        Zlib
 Group:          Development/Languages/Tcl
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 URL:            https://sourceforge.net/projects/tcl-collate/
